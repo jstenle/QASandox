@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.apiTest.restAssuredTest.AppTest" time="5.896" tests="8" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/jstenle/Documents/GitHub/QASandox/restAssuredTest/target/test-classes:/Users/jstenle/Documents/GitHub/QASandox/restAssuredTest/target/classes:/Users/jstenle/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:/Users/jstenle/.m2/repository/io/rest-assured/rest-assured/5.2.0/rest-assured-5.2.0.jar:/Users/jstenle/.m2/repository/org/apache/groovy/groovy/4.0.1/groovy-4.0.1.jar:/Users/jstenle/.m2/repository/org/apache/groovy/groovy-xml/4.0.1/groovy-xml-4.0.1.jar:/Users/jstenle/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/jstenle/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/Users/jstenle/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/jstenle/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/jstenle/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/Users/jstenle/.m2/repository/org/hamcrest/hamcrest/2.1/hamcrest-2.1.jar:/Users/jstenle/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/jstenle/.m2/repository/io/rest-assured/json-path/5.2.0/json-path-5.2.0.jar:/Users/jstenle/.m2/repository/org/apache/groovy/groovy-json/4.0.1/groovy-json-4.0.1.jar:/Users/jstenle/.m2/repository/io/rest-assured/rest-assured-common/5.2.0/rest-assured-common-5.2.0.jar:/Users/jstenle/.m2/repository/io/rest-assured/xml-path/5.2.0/xml-path-5.2.0.jar:/Users/jstenle/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/Users/jstenle/.m2/repository/org/junit/jupiter/junit-jupiter/5.7.1/junit-jupiter-5.7.1.jar:/Users/jstenle/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.1/junit-jupiter-api-5.7.1.jar:/Users/jstenle/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/Users/jstenle/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/jstenle/.m2/repository/org/junit/platform/junit-platform-commons/1.7.1/junit-platform-commons-1.7.1.jar:/Users/jstenle/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.1/junit-jupiter-params-5.7.1.jar:/Users/jstenle/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.1/junit-jupiter-engine-5.7.1.jar:/Users/jstenle/.m2/repository/org/junit/platform/junit-platform-engine/1.7.1/junit-platform-engine-1.7.1.jar:"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="BR"/>
+    <property name="sun.boot.library.path" value="/Users/jstenle/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.x86_64_21.0.5.v20241023-1957/jre/lib"/>
+    <property name="sun.java.command" value="/Users/jstenle/Documents/GitHub/QASandox/restAssuredTest/target/surefire/surefirebooter3168917178619075648.jar /Users/jstenle/Documents/GitHub/QASandox/restAssuredTest/target/surefire 2025-01-28T17-21-00_668-jvmRun1 surefire21259157976916403tmp surefire_05949739509731180211tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/jstenle/Documents/GitHub/QASandox/restAssuredTest/target/test-classes:/Users/jstenle/Documents/GitHub/QASandox/restAssuredTest/target/classes:/Users/jstenle/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:/Users/jstenle/.m2/repository/io/rest-assured/rest-assured/5.2.0/rest-assured-5.2.0.jar:/Users/jstenle/.m2/repository/org/apache/groovy/groovy/4.0.1/groovy-4.0.1.jar:/Users/jstenle/.m2/repository/org/apache/groovy/groovy-xml/4.0.1/groovy-xml-4.0.1.jar:/Users/jstenle/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/jstenle/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/Users/jstenle/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/jstenle/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/jstenle/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/Users/jstenle/.m2/repository/org/hamcrest/hamcrest/2.1/hamcrest-2.1.jar:/Users/jstenle/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/jstenle/.m2/repository/io/rest-assured/json-path/5.2.0/json-path-5.2.0.jar:/Users/jstenle/.m2/repository/org/apache/groovy/groovy-json/4.0.1/groovy-json-4.0.1.jar:/Users/jstenle/.m2/repository/io/rest-assured/rest-assured-common/5.2.0/rest-assured-common-5.2.0.jar:/Users/jstenle/.m2/repository/io/rest-assured/xml-path/5.2.0/xml-path-5.2.0.jar:/Users/jstenle/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/Users/jstenle/.m2/repository/org/junit/jupiter/junit-jupiter/5.7.1/junit-jupiter-5.7.1.jar:/Users/jstenle/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.1/junit-jupiter-api-5.7.1.jar:/Users/jstenle/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/Users/jstenle/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/jstenle/.m2/repository/org/junit/platform/junit-platform-commons/1.7.1/junit-platform-commons-1.7.1.jar:/Users/jstenle/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.1/junit-jupiter-params-5.7.1.jar:/Users/jstenle/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.1/junit-jupiter-engine-5.7.1.jar:/Users/jstenle/.m2/repository/org/junit/platform/junit-platform-engine/1.7.1/junit-platform-engine-1.7.1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/jstenle"/>
+    <property name="user.language" value="pt"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-10-15"/>
+    <property name="java.home" value="/Users/jstenle/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.x86_64_21.0.5.v20241023-1957/jre"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/jstenle/Documents/GitHub/QASandox/restAssuredTest"/>
+    <property name="style.color" value="always"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/jstenle/Documents/GitHub/QASandox/restAssuredTest/target/surefire/surefirebooter3168917178619075648.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="21.0.5+11-LTS"/>
+    <property name="user.name" value="jstenle"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="11.7.10"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-21.0.5+11"/>
+    <property name="localRepository" value="/Users/jstenle/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/1d/0g6ggzdn47z1f4yhs5k8k9jc0000gn/T/"/>
+    <property name="java.version" value="21.0.5"/>
+    <property name="user.dir" value="/Users/jstenle/Documents/GitHub/QASandox/restAssuredTest"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/jstenle/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="21.0.5+11-LTS"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="testPostEndpoint" classname="com.apiTest.restAssuredTest.AppTest" time="2.823"/>
+  <testcase name="testDeleteEndpoint" classname="com.apiTest.restAssuredTest.AppTest" time="0.609"/>
+  <testcase name="testGetEndpoint" classname="com.apiTest.restAssuredTest.AppTest" time="0.098"/>
+  <testcase name="testPostInvalidData" classname="com.apiTest.restAssuredTest.AppTest" time="0.516"/>
+  <testcase name="testGetNonExistentEndpoint" classname="com.apiTest.restAssuredTest.AppTest" time="0.511"/>
+  <testcase name="testPutInvalidData" classname="com.apiTest.restAssuredTest.AppTest" time="0.444"/>
+  <testcase name="testPutEndpoint" classname="com.apiTest.restAssuredTest.AppTest" time="0.457"/>
+  <testcase name="testDeleteNonExistentEndpoint" classname="com.apiTest.restAssuredTest.AppTest" time="0.428"/>
+</testsuite>
