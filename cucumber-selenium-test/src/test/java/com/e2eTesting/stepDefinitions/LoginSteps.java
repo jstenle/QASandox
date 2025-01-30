@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import com.e2eTesting.pageObjects.ElementalSeleniumPage;
 import com.e2eTesting.pageObjects.LoginPage;
 import com.e2eTesting.pageObjects.SecurePage;
-import com.e2eTesting.utils.WebDriverManager;
+import com.utils.WebDriverManager;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
