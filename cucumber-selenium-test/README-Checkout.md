@@ -1,7 +1,7 @@
-# Testes Automatizados com Cucumber e Selenium
+# Projeto de Teste de Checkout E-commerce
 
 ## Descrição
-Este projeto foi criado para demonstrar a automação de testes de ponta a ponta (E2E) utilizando a combinação de **Cucumber** e **Selenium**. O foco principal é validar a funcionalidade de login em uma aplicação web, garantindo que os usuários possam acessar com credenciais válidas.
+Este projeto contém testes automatizados para o fluxo de checkout em um e-commerce de exemplo, utilizando **Cucumber** para a definição de cenários e **Selenium** para a automação do navegador. O objetivo é validar a adição de produtos ao carrinho, o preenchimento de informações de pagamento e a finalização da compra.
 
 ## Requisitos
 - Java JDK (versão 17 ou superior)
@@ -30,11 +30,11 @@ Este projeto foi criado para demonstrar a automação de testes de ponta a ponta
 - Para executar testes específicos, clique com o botão direito na classe de teste desejada ou no arquivo TestRunner.java e escolha Run As > JUnit Test.
 
 ## Funcionalidade dos Testes
-- O projeto contém testes que validam a funcionalidade de login, incluindo cenários de sucesso e falha.
-- Os testes asseguram que os usuários sejam redirecionados para a seção correta após o login e validam as mensagens apresentadas ao usuário.
+- O projeto contém testes que validam a funcionalidade de checkout, incluindo cenários de sucesso.
+- Os testes asseguram que os usuários possam adicionar produtos ao carrinho, preencher informações de pagamento e ver uma mensagem de confirmação após a compra.
 
 ## Estrutura dos Testes
-- pageObjects: Contém as classes que representam as páginas da aplicação.
+- pageObjects: Contém classes que representam as páginas da aplicação.
 - stepDefinitions: Contém os métodos que correspondem a cada passo definido nos arquivos de feature.
 - utils: Contém classes utilitárias, como o WebDriverManager, que gerencia a inicialização e o encerramento do WebDriver.
 
