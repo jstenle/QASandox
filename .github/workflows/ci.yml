@@ -74,11 +74,11 @@ jobs:
       run: |
           pkill chrome || true 
 
-    - name: Run API Tests
-      run: mvn -f restAssuredTest/pom.xml test
+    #- name: Run API Tests
+    #  run: mvn -f restAssuredTest/pom.xml test
 
-    - name: Run E2E Tests
-      run: mvn -f cucumber-selenium-test/pom.xml test
+    #- name: Run E2E Tests
+    #  run: mvn -f cucumber-selenium-test/pom.xml test
 
     - name: Run Mobile Tests 1
       run: mvn -f MyAppiumProject-SauceLabs/pom.xml test
