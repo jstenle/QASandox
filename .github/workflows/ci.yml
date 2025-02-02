@@ -24,24 +24,23 @@ jobs:
         sudo apt-get install -y google-chrome-stable
 
         # Adicionando e instalando o SDK Android
-        sudo apt-get update
-        sudo apt-get install -y wget unzip
         mkdir -p $HOME/Android/Sdk
         export ANDROID_HOME=$HOME/Android/Sdk
+        # Baixa e extrai o Command Line Tools
         wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip
         unzip commandlinetools-linux-7302050_latest.zip -d $HOME/Android/Sdk/cmdline-tools
         rm commandlinetools-linux-7302050_latest.zip
         
-        # Renomeie o diretório extraído para 'latest' antes da configuração
+        # Renomeia a pasta extraída
         mv $HOME/Android/Sdk/cmdline-tools/cmdline-tools $HOME/Android/Sdk/cmdline-tools/latest
 
-        # Instalando platform-tools
+        # Instala as platform-tools
         yes | $HOME/Android/Sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_HOME --install "platform-tools" "build-tools;30.0.3"
 
-        # Atualizando o PATH
+        # Atualiza o PATH para as ferramentas do Android
         echo "export ANDROID_HOME=$HOME/Android/Sdk" >> $GITHUB_ENV
-        echo "export PATH=$PATH:$ANDROID_HOME/platform-tools" >> $GITHUB_ENV
-        echo "export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin" >> $GITHUB_ENV
+        echo "export PATH=\$PATH:\$ANDROID_HOME/platform-tools" >> $GITHUB_ENV
+        echo "export PATH=\$PATH:\$ANDROID_HOME/cmdline-tools/latest/bin" >> $GITHUB_ENV
 
     - name: Install Chrome and ChromeDriver
       run: |
