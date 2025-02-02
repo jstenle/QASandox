@@ -21,7 +21,7 @@ jobs:
         distribution: 'adopt'
 
     - name: Run API Tests
-      run: mvn -f https://github.com/jstenle/QASandox/blob/6651cd11f68ff727b644246c5f9fd0637793db00/restAssuredTest/pom.xml test
+      run: mvn -f restAssuredTest/pom.xml test
 
     - name: Run E2E Tests
       run: mvn -f /Users/jstenle/Documents/GitHub/QASandox/cucumber-selenium-test/pom.xml test
