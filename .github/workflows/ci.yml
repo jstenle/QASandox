@@ -28,14 +28,12 @@ jobs:
         # Obtém a versão do ChromeDriver correspondente
         CHROME_DRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
 
-        CURRENT_DIR=$(pwd)
-        
         # Faz download do ChromeDriver
-        wget -N -P "$CURRENT_DIR" https://storage.googleapis.com/chrome-for-testing-public/132.0.6834.159/linux64/chromedriver-linux64.zip
-        ls -la "$CURRENT_DIR"
-        if [ -f "chromedriver_linux64.zip" ]; then
+        wget -N https://storage.googleapis.com/chrome-for-testing-public/132.0.6834.159/linux64/chromedriver-linux64.zip
+        
+        if [ -f "chromedriver-linux64.zip" ]; then
             echo "Arquivo ChromeDriver encontrado, descompactando..."
-            unzip -q chromedriver_linux64.zip
+            unzip -q chromedriver-linux64.zip
             sudo mv chromedriver /usr/local/bin/
             sudo chmod +x /usr/local/bin/chromedriver
         else
