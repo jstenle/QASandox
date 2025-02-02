@@ -24,13 +24,16 @@ jobs:
         sudo apt-get install -y google-chrome-stable
 
         # Adicionando e instalando o SDK Android
+        sudo apt-get update
+        sudo apt-get install -y wget unzip
         mkdir -p $HOME/Android/Sdk
         export ANDROID_HOME=$HOME/Android/Sdk
         wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip
         unzip commandlinetools-linux-7302050_latest.zip -d $HOME/Android/Sdk/cmdline-tools
         rm commandlinetools-linux-7302050_latest.zip
-        mkdir -p $HOME/Android/Sdk/cmdline-tools/latest
-        mv $HOME/Android/Sdk/cmdline-tools/* $HOME/Android/Sdk/cmdline-tools/latest
+        
+        # Renomeie o diretório extraído para 'latest' antes da configuração
+        mv $HOME/Android/Sdk/cmdline-tools/cmdline-tools $HOME/Android/Sdk/cmdline-tools/latest
 
         # Instalando platform-tools
         yes | $HOME/Android/Sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_HOME --install "platform-tools" "build-tools;30.0.3"
