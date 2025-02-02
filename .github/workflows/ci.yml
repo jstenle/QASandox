@@ -23,21 +23,22 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y google-chrome-stable
 
-        # Adicionando e instalando o SDK Android
+        # Cria diretório para o SDK
         mkdir -p $HOME/Android/Sdk
         export ANDROID_HOME=$HOME/Android/Sdk
-        # Baixa e extrai o Command Line Tools
+        
+        # Baixando e extraindo a ferramenta de linha de comando
         wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip
         unzip commandlinetools-linux-7302050_latest.zip -d $HOME/Android/Sdk/cmdline-tools
         rm commandlinetools-linux-7302050_latest.zip
         
-        # Renomeia a pasta extraída
+        # Renomear e configurar o SDK
         mv $HOME/Android/Sdk/cmdline-tools/cmdline-tools $HOME/Android/Sdk/cmdline-tools/latest
 
-        # Instala as platform-tools
+        # Instala platform-tools e build-tools
         yes | $HOME/Android/Sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_HOME --install "platform-tools" "build-tools;30.0.3"
 
-        # Atualiza o PATH para as ferramentas do Android
+        # Adiciona as ferramentas do Android ao PATH
         echo "export ANDROID_HOME=$HOME/Android/Sdk" >> $GITHUB_ENV
         echo "export PATH=\$PATH:\$ANDROID_HOME/platform-tools" >> $GITHUB_ENV
         echo "export PATH=\$PATH:\$ANDROID_HOME/cmdline-tools/latest/bin" >> $GITHUB_ENV
@@ -68,9 +69,10 @@ jobs:
             echo "Erro: ChromeDriver não foi baixado."
             exit 1
         fi
+    
     - name: Stop Chrome if running
       run: |
-          adb shell am force-stop com.android.chrome || true
+          pkill chrome || true 
 
     - name: Run API Tests
       run: mvn -f restAssuredTest/pom.xml test
