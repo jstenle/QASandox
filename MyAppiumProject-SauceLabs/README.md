@@ -1,4 +1,4 @@
-# MyAppiumProject
+# MyAppiumProject-SauceLabs
 
 Este projeto é uma automação de testes para o aplicativo móvel **Sauce Labs Mobile App** utilizando **Appium** e **JUnit**. O objetivo é validar as funcionalidades do aplicativo, incluindo o fluxo de login e a navegação no aplicativo.
 
@@ -16,8 +16,8 @@ Certifique-se de que você possui os seguintes pré-requisitos antes de configur
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/jstenle/QASandox/MyAppiumProject.git
-   cd MyAppiumProject
+   git clone https://github.com/jstenle/QASandox/MyAppiumProject-SauceLabs.git
+   cd MyAppiumProject-SauceLabs
 
 2. **Instale o Appium globalmente (se não estiver instalado):**
    ```bash
