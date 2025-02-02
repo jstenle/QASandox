@@ -24,10 +24,10 @@ jobs:
       run: mvn -f restAssuredTest/pom.xml test
 
     - name: Run E2E Tests
-      run: mvn -f /Users/jstenle/Documents/GitHub/QASandox/cucumber-selenium-test/pom.xml test
+      run: mvn -f cucumber-selenium-test/pom.xml test
 
     - name: Run Mobile Tests 1
-      run: mvn -f /Users/jstenle/Documents/GitHub/QASandox/MyAppiumProject-SauceLabs/pom.xml test
+      run: mvn -f MyAppiumProject-SauceLabs/pom.xml test
 
     - name: Run Mobile Tests 2
-      run: mvn -f /Users/jstenle/Documents/GitHub/QASandox/MyAppiumProjet-OnlineForm/pom.xml test
+      run: mvn -f MyAppiumProjet-OnlineForm/pom.xml test
