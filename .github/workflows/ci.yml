@@ -11,53 +11,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    # Etapa para obter o código-fonte do repositório
     - name: Check out code
       uses: actions/checkout@v2
 
-    - name: Install Java and Android SDK
+    # Instalando Java
+    - name: Install Java
       run: |
+        # Atualiza o apt-get e instala Java
         sudo apt-get update
         sudo apt-get install -y openjdk-11-jdk wget apt-transport-https unzip
-        wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-        echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
-        sudo apt-get update
-        sudo apt-get install -y google-chrome-stable
+    
+    # Executando Testes de API
+    - name: Run API Tests
+      run: mvn -f restAssuredTest/pom.xml test
 
-        # Cria diretório para o SDK
-        mkdir -p $HOME/Android/Sdk
-        export ANDROID_HOME=$HOME/Android/Sdk
-        
-        # Baixando e extraindo a ferramenta de linha de comando
-        wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip
-        unzip commandlinetools-linux-7302050_latest.zip -d $HOME/Android/Sdk/cmdline-tools
-        rm commandlinetools-linux-7302050_latest.zip
-        
-        # Renomear e configurar o SDK
-        mv $HOME/Android/Sdk/cmdline-tools/cmdline-tools $HOME/Android/Sdk/cmdline-tools/latest
-
-        # Instala platform-tools e build-tools
-        yes | $HOME/Android/Sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_HOME --install "platform-tools" "build-tools;30.0.3"
-
-        # Adiciona as ferramentas do Android ao PATH
-        echo "export ANDROID_HOME=$HOME/Android/Sdk" >> $GITHUB_ENV
-        echo "export PATH=\$PATH:\$ANDROID_HOME/platform-tools" >> $GITHUB_ENV
-        echo "export PATH=\$PATH:\$ANDROID_HOME/cmdline-tools/latest/bin" >> $GITHUB_ENV
-
+    # Instalando Chrome e ChromeDriver necessários para testes E2E
     - name: Install Chrome and ChromeDriver
       run: |
-        sudo apt-get update
-        sudo apt-get install -y wget apt-transport-https unzip
+        # Adiciona repositório do Google Chrome
         wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
         echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+
+        # Atualiza novamente o apt-get e instala o Google Chrome
         sudo apt-get update
         sudo apt-get install -y google-chrome-stable
         
-        # Obtém a versão instalada do Chrome
+        # Obtém versão instalada do Chrome e correspondente do ChromeDriver
         CHROME_VERSION=$(google-chrome --version | awk '{print $3}')
-        # Obtém a versão do ChromeDriver correspondente
         CHROME_DRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
 
-        # Faz download do ChromeDriver
+        # Faz download e descompacta o ChromeDriver
         wget -N https://storage.googleapis.com/chrome-for-testing-public/132.0.6834.159/linux64/chromedriver-linux64.zip
         
         if [ -f "chromedriver-linux64.zip" ]; then
@@ -70,16 +54,46 @@ jobs:
             exit 1
         fi
     
+    # Certifica-se que nenhuma instância do Chrome está sendo executada
     - name: Stop Chrome if running
       run: |
           pkill chrome || true 
+    
+    # Executando Testes E2E
+    - name: Run E2E Tests
+      run: mvn -f cucumber-selenium-test/pom.xml test
 
-    #- name: Run API Tests
-    #  run: mvn -f restAssuredTest/pom.xml test
+    # Instalando Node.js para Testes Mobile
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '22'
 
-    #- name: Run E2E Tests
-    #  run: mvn -f cucumber-selenium-test/pom.xml test
+    # Instalando Appium para Testes Mobile
+    - name: Install Appium
+      run: |
+        npm install -g appium  # Instala o Appium globalmente
 
+    # Instalando Android SDK
+    - name: Install Android SDK
+      run: |
+        # Configuração do SDK Android
+        mkdir -p $HOME/Android/Sdk
+        export ANDROID_HOME=$HOME/Android/Sdk
+        wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip
+        unzip commandlinetools-linux-7302050_latest.zip -d $HOME/Android/Sdk/cmdline-tools
+        rm commandlinetools-linux-7302050_latest.zip
+        mv $HOME/Android/Sdk/cmdline-tools/cmdline-tools $HOME/Android/Sdk/cmdline-tools/latest
+
+        # Instala platform-tools e build-tools do Android
+        yes | $HOME/Android/Sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_HOME --install "platform-tools" "build-tools;30.0.3"
+
+        # Atualiza variáveis de ambiente para o SDK Android
+        echo "export ANDROID_HOME=$HOME/Android/Sdk" >> $GITHUB_ENV
+        echo "export PATH=\$PATH:\$ANDROID_HOME/platform-tools" >> $GITHUB_ENV
+        echo "export PATH=\$PATH:\$ANDROID_HOME/cmdline-tools/latest/bin" >> $GITHUB_ENV
+
+    # Executando Testes Mobile
     - name: Run Mobile Tests 1
       run: mvn -f MyAppiumProject-SauceLabs/pom.xml test
 
