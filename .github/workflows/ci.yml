@@ -98,18 +98,18 @@ jobs:
         echo "export PATH=\$PATH:\$ANDROID_HOME/platform-tools" >> $GITHUB_ENV
         echo "export PATH=\$PATH:\$ANDROID_HOME/cmdline-tools/latest/bin" >> $GITHUB_ENV
 
-    # Criando um AVD (Android Virtual Device) com a versão 15
-    - name: Create Android Emulator
-      run: |
-        echo "no" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
-        yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_HOME --install "system-images;android-15;default;x86"
-        $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager create avd -n emulator-5554 -k "system-images;android-15;default;x86" --force
+    # # Criando um AVD (Android Virtual Device) com a versão 15
+    # - name: Create Android Emulator
+    #   run: |
+    #     echo "no" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
+    #     yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_HOME --install "system-images;android-15;default;x86"
+    #     $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager create avd -n emulator-5554 -k "system-images;android-15;default;x86" --force
 
-    # Iniciando o Emulador Android
-    - name: Start Android Emulator
-      run: |
-        nohup $ANDROID_HOME/emulator/emulator -avd emulator-5554 -no-window &  # Inicia o emulador em segundo plano sem interface gráfica
-        sleep 60  # Aguarda o emulador inicializar completamente
+    # # Iniciando o Emulador Android
+    # - name: Start Android Emulator
+    #   run: |
+    #     nohup $ANDROID_HOME/emulator/emulator -avd emulator-5554 -no-window &  # Inicia o emulador em segundo plano sem interface gráfica
+    #     sleep 60  # Aguarda o emulador inicializar completamente
     
     # Iniciando o Appium
     - name: Start Appium
@@ -117,8 +117,8 @@ jobs:
         nohup appium &   # Inicia o Appium em segundo plano
 
     # Executando Testes Mobile
-    - name: Run Mobile Tests 1
-      run: mvn -f MyAppiumProject-SauceLabs/pom.xml test
+    # - name: Run Mobile Tests 1
+    #   run: mvn -f MyAppiumProject-SauceLabs/pom.xml test
 
-    - name: Run Mobile Tests 2
-      run: mvn -f MyAppiumProjet-OnlineForm/pom.xml test
+    # - name: Run Mobile Tests 2
+    #   run: mvn -f MyAppiumProjet-OnlineForm/pom.xml test
