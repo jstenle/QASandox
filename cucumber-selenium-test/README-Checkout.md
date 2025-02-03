@@ -30,7 +30,7 @@ Este projeto contém testes automatizados para o fluxo de checkout em um e-comme
 - Para executar testes específicos, clique com o botão direito na classe de teste desejada ou no arquivo TestRunner.java e escolha Run As > JUnit Test.
 
 ## Funcionalidade dos Testes
-- O projeto contém testes que validam a funcionalidade de checkout, incluindo cenários de sucesso.
+- O projeto contém testes que validam a funcionalidade de checkout, incluindo cenário de sucesso.
 - Os testes asseguram que os usuários possam adicionar produtos ao carrinho, preencher informações de pagamento e ver uma mensagem de confirmação após a compra.
 
 ## Estrutura dos Testes

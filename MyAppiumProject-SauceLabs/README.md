@@ -1,6 +1,6 @@
 # MyAppiumProject-SauceLabs
 
-Este projeto é uma automação de testes para o aplicativo móvel **Sauce Labs Mobile App** utilizando **Appium** e **JUnit**. O objetivo é validar as funcionalidades do aplicativo, incluindo o fluxo de login e a navegação no aplicativo.
+Este projeto é uma automação de testes para o aplicativo móvel **Sauce Labs Mobile App** utilizando **Appium**. O objetivo é validar as funcionalidades do aplicativo, incluindo o fluxo de login e a navegação no aplicativo.
 
 ## Pré-Requisitos
 
@@ -11,6 +11,7 @@ Certifique-se de que você possui os seguintes pré-requisitos antes de configur
 - **Node.js** e **npm** (para instalar o Appium)
 - **Appium Server** (instalado via npm)
 - **Android Studio** com um emulador ou dispositivo Android configurado
+- **SauceLabs App** instalado no emulador
 
 ## Instalação
 
@@ -25,7 +26,7 @@ Certifique-se de que você possui os seguintes pré-requisitos antes de configur
 
 3. **Configuração do Ambiente**
 - Configurar JAVA_HOME
-- Certifique-se de que a variável de ambiente JAVA_HOME está configurada corretamente. Você pode configurá-lo em seu perfil de shell:
+- Certifique-se de que a variável de ambiente JAVA_HOME está configurada corretamente.
    ```bash
    export JAVA_HOME=$(/usr/libexec/java_home)
 
@@ -34,6 +35,9 @@ Certifique-se de que você possui os seguintes pré-requisitos antes de configur
    export ANDROID_HOME=$HOME/Library/Android/sdk
    export ANDROID_SDK_ROOT=$ANDROID_HOME
    export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+4. **Instale o SauceLabs Mobile app**
+   - Instalar o Android.SauceLabs.Mobile.Sample.app.2.7.1.apk (está disponível em MyAppiumProject-SauceLabs) no emulador.
 
 ## Executando os Testes
 1. **Inicie o Appium Server:**
@@ -53,6 +57,9 @@ Certifique-se de que você possui os seguintes pré-requisitos antes de configur
 ## Estrutura dos Testes
 - pageObjects: Contém as classes que representam as páginas da aplicação.
 - utils: Contém classes utilitárias, como o DriverManager, que gerencia a inicialização e o encerramento do AndroidDriver.
+
+## Reporte
+- Verifique o reporte gerado em: MyAppiumProject-SauceLabs/target/surefire-reports
 
 ## Contribuições
 Contribuições são bem-vindas! Sinta-se à vontade para fazer fork do repositório e enviar pull requests com melhorias, correções ou novas funcionalidades.

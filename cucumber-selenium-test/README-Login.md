@@ -30,13 +30,16 @@ Este projeto foi criado para demonstrar a automação de testes de ponta a ponta
 - Para executar testes específicos, clique com o botão direito na classe de teste desejada ou no arquivo TestRunner.java e escolha Run As > JUnit Test.
 
 ## Funcionalidade dos Testes
-- O projeto contém testes que validam a funcionalidade de login, incluindo cenários de sucesso e falha.
+- O projeto contém testes que validam a funcionalidade de login, incluindo cenário de sucesso.
 - Os testes asseguram que os usuários sejam redirecionados para a seção correta após o login e validam as mensagens apresentadas ao usuário.
 
 ## Estrutura dos Testes
 - pageObjects: Contém as classes que representam as páginas da aplicação.
 - stepDefinitions: Contém os métodos que correspondem a cada passo definido nos arquivos de feature.
 - utils: Contém classes utilitárias, como o WebDriverManager, que gerencia a inicialização e o encerramento do WebDriver.
+
+## Reporte
+- Verifique o reporte gerado em: cucumber-selenium-test/target/surefire-reports
 
 ## Contribuições
 Contribuições são bem-vindas! Sinta-se à vontade para fazer fork do repositório e enviar pull requests com melhorias, correções ou novas funcionalidades.

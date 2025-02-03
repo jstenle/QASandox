@@ -1,6 +1,6 @@
 # MyAppiumProject-OnlineForm
 
-Este projeto é uma automação de testes para um formulário online utilizando **Appium** e **JUnit**. O objetivo é validar as funcionalidades de preenchimento do formulário, incluindo a inserção do nome, bem como a verificação da mensagem de agradecimento após o envio das respostas.
+Este projeto é uma automação de testes para um formulário online utilizando **Appium**. O objetivo é validar as funcionalidades de preenchimento do formulário, incluindo a inserção do nome, bem como a verificação da mensagem de agradecimento após o envio das respostas.
 
 ## Pré-Requisitos
 
@@ -53,6 +53,9 @@ Certifique-se de que você possui os seguintes pré-requisitos antes de configur
 ## Estrutura dos Testes
 - pageObjects: Contém as classes que representam as páginas da aplicação.
 - utils: Contém classes utilitárias, como o DriverManager, que gerencia a inicialização e o encerramento do AndroidDriver.
+
+## Reporte
+- Verifique o reporte gerado em: restAssuredTest/target/surefire-reports
 
 ## Contribuições
 Contribuições são bem-vindas! Sinta-se à vontade para fazer fork do repositório e enviar pull requests com melhorias, correções ou novas funcionalidades.
